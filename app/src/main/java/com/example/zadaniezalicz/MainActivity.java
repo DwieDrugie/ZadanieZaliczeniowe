@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -42,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
         EditText surname = findViewById(R.id.surname);
         CheckBox letters = findViewById(R.id.Letters);
         CheckBox numbers = findViewById(R.id.numbers);
-        CheckBox spChar = findViewById(R.id.specialChar);
+        CheckBox spChars = findViewById(R.id.specialChar);
 
-        String chars = "abcdefghijklmnopqrstuvwxyz";
-
+        AlertDialog.Builder sb = new AlertDialog.Builder(MainActivity.this);
+        Random rn = new Random();
 
 
         btnGen.setOnClickListener(new View.OnClickListener() {
@@ -55,25 +56,26 @@ public class MainActivity extends AppCompatActivity {
                 int lengths = Integer.parseInt(qua);
                 String chars = "abcdefghijklmnopqrstuvwxyz";
                 String upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                String numbers = "0123456789";
+                String number = "0123456789";
                 String spChar = "!@#$%^&*()_-+=<>?/{}~|";
-                Random rn = new Random();
-                StringBuilder sb = new StringBuilder(lengths);
+
                 if(letters.isChecked()) {
                     chars += upperCase;
-                    sb.append(upperCase.charAt(rn.nextInt(upperCase.length()-1)));
+                }
+                if(numbers.isChecked()){
+                    chars += number;
+                }
+                if(spChars.isChecked()){
+                    chars += spChar;
+                }
+                StringBuilder pass = new StringBuilder();
+                for (int i=0; i< lengths; i++){
+                    pass.append(chars.charAt(rn.nextInt(chars.length())));
 
                 }
-
-
-
-                for(int i=sb.length();i < lengths;++i){
-                    sb.append(chars.charAt(rn.nextInt(chars.length())));
-                }
-
-
-
-
+                sb.setMessage(pass).setTitle("Hasło");
+                AlertDialog nPass = sb.create();
+                nPass.show();
 
 
             }
