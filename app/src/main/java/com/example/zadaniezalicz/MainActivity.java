@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog.Builder sb = new AlertDialog.Builder(MainActivity.this);
         Random rn = new Random();
-
+        StringBuilder pass = new StringBuilder();
 
         btnGen.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 if(spChars.isChecked()){
                     chars += spChar;
                 }
-                StringBuilder pass = new StringBuilder();
+
                 for (int i=0; i< lengths; i++){
                     pass.append(chars.charAt(rn.nextInt(chars.length())));
 
@@ -78,6 +78,21 @@ public class MainActivity extends AppCompatActivity {
                 nPass.show();
 
 
+            }
+        });
+
+        btnConf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String imie = name.getText().toString();
+                String nazwisko = surname.getText().toString();
+                String stanowisko = spinner.getSelectedItem().toString();
+                String message = "Stanowisko: " + stanowisko + "\n" + "Imię: " + imie + "\n" + "Nazwisko: " + nazwisko + "\n" + "Hasło: " + pass;
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(MainActivity.this);
+                alertDialog
+                        .setTitle("Info")
+                        .setMessage(message);
+                alertDialog.show();
             }
         });
     }
