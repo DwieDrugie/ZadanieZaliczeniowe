@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ZadanieZalicz</string>
+    <string-array name="spinnerItems">
+        <item>Kierownik</item>
+        <item>Starszy programista</item>
+        <item>Młodszy programista</item>
+        <item>Tester</item>
+    </string-array>
 </resources>

@@ -32,18 +32,47 @@
         android:hint="Nazwisko"
         />
 
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Stanowisko"
         android:layout_marginLeft="20dp"
-        android:textSize="18sp">
+        android:textSize="18sp"/>
 
+    <Spinner
+        android:id="@+id/spinnerItems"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"/>
+    </LinearLayout>
 
-    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generowanie Hasła"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp" />
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:hint="Ile znaków?"/>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Małe i wielkie litery"
+        android:layout_marginLeft="20dp"/>
 
 </LinearLayout>
