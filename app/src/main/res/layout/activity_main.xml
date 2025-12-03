@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#B0C4DE">
 
 
     <TextView
@@ -14,7 +15,8 @@
         android:layout_height="wrap_content"
         android:text="Dane pracownika"
         android:textSize="25sp"
-        android:paddingLeft="10sp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
         android:paddingTop="10sp"/>
     
     <EditText
@@ -103,7 +105,7 @@
         android:layout_gravity="end"
         android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
-        android:backgroundTint="#57B9FF"/>
+        android:backgroundTint="#4682B4"/>
     <Button
         android:id="@+id/btnConfirm"
         android:layout_marginTop="10dp"
@@ -111,6 +113,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Zatwierdź"
-        android:backgroundTint="#57B9FF"/>
+        android:backgroundTint="#4682B4"/>
 
 </LinearLayout>
